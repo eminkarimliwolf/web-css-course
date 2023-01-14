@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loader</title>
+    <style>
+        .container{
+            position: absolute;
+            display:flex;
+            flex-flow: row wrap;
+            flex-direction: row;
+            gap: 10px;
+            width: 100%;
+            height: 100%;
+            background-color: chartreuse;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-loader-1 {
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            border:16px solid;
+            border-color:#766DF4 #0000;
+            animation:s1 1s infinite;
+            }
+        @keyframes s1 {to{transform: rotate(.5turn)}}
+
+        .custom-loader-2 {
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            border:16px solid;
+            border-color:#E4E4ED;
+            border-right-color: #766DF4;
+            animation:s2 1s infinite linear;
+            }
+            @keyframes s2 {to{transform: rotate(1turn)}}
+
+        .custom-loader-3 {
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            background:conic-gradient(#0000 10%,#766DF4);
+            -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 16px),#000 0);
+            animation:s3 1s infinite linear;
+            }
+            @keyframes s3 {to{transform: rotate(1turn)}}
+
+        .custom-loader-4 {
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            padding:6px;
+            background: 
+                radial-gradient(farthest-side,#766DF4 95%,#0000) 50% 0/24px 24px no-repeat,
+                radial-gradient(farthest-side,#0000 calc(100% - 10px),#766DF4 calc(100% - 8px)) content-box;
+            animation:s6 2s infinite ;
+            }
+            @keyframes s6 {to{transform: rotate(1turn)}}
+
+        .custom-loader-5 {
+            width:100px;
+            height:100px;
+            --c:radial-gradient(farthest-side,#766DF4 92%,#0000);
+            background: 
+                var(--c) 50% 0,
+                var(--c) 50% 100%,
+                var(--c) 100% 50%,
+                var(--c) 0    50%;
+            background-size:24px 24px;
+            background-repeat:no-repeat;
+            animation:s7 1s infinite;
+            }
+            @keyframes s7 {to{transform: rotate(.5turn)}}
+
+        .custom-loader-6 {
+            width:100px;
+            height:100px;
+            color:#766DF4;
+            --c:radial-gradient(farthest-side,currentColor 92%,#0000);
+            background: 
+                var(--c) 50% 0   /24px 24px,
+                var(--c) 50% 100%/24px 24px,
+                var(--c) 100% 50%/24px 24px,
+                var(--c) 0    50%/24px 24px,
+                var(--c) 50%  50%/24px 24px,
+                linear-gradient(currentColor 0 0) 50% 50%/8px 100%,
+                linear-gradient(currentColor 0 0) 50% 50%/100% 8px;
+            background-repeat:no-repeat;
+            animation:s8 1s infinite linear;
+            }
+            @keyframes s8 {to{transform: rotate(.5turn)}}
+
+        .custom-loader-7 {
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            background: 
+                radial-gradient(farthest-side,#766DF4 95%,#0000) 50% 1px/24px 24px no-repeat,
+                radial-gradient(farthest-side,#0000 calc(100% - 28px),#E4E4ED 0);
+            animation:s9 2s infinite linear;
+            }
+            @keyframes s9 {to{transform: rotate(1turn)}}
+
+        .custom-loader-8 {
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            color:#766DF4;
+            background: 
+                linear-gradient(currentColor 0 0) center/100% 8px,
+                linear-gradient(currentColor 0 0) center/8px 100%,
+                radial-gradient(farthest-side,#0000 calc(100% - 12px),currentColor calc(100% - 10px)),
+                radial-gradient(circle 12px,currentColor 94%,#0000 0);
+            background-repeat: no-repeat;
+            animation:s10 2s infinite linear;
+            position: relative;
+            }
+            .custom-loader-8:before {
+            content: "";
+            position: absolute;
+            inset:0;
+            border-radius: inherit;
+            background:inherit;
+            transform:rotate(45deg);
+            }
+            @keyframes s10 {to{transform: rotate(.5turn)}}
+
+
+        .custom-loader-9 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            padding: 12px;
+            background:
+                conic-gradient(from 135deg at top,#766DF4 90deg, #0000 0) 0 calc(50% - 8px)/34px 17px,
+                radial-gradient(farthest-side at bottom left,#0000 calc(100% - 12px),#766DF4 calc(100% - 10px) 99%,#0000) top right/50%  50% content-box content-box,
+                radial-gradient(farthest-side at top        ,#0000 calc(100% - 12px),#766DF4 calc(100% - 10px) 99%,#0000) bottom   /100% 50% content-box content-box;
+            background-repeat: no-repeat;
+            animation:s1 1s infinite linear;
+            }
+
+            @keyframes s1{ 
+            100%{transform: rotate(1turn)}
+            }
+
+            .custom-loader-10 {
+                width: 100px;
+                height: 100px;
+                display: grid;
+            }
+            .custom-loader-10::before,
+            .custom-loader-10::after {    
+                content:"";
+                grid-area: 1/1;
+                --c: radial-gradient(farthest-side,#766DF4 92%,#0000);
+                background: 
+                var(--c) 50%  0, 
+                var(--c) 50%  100%, 
+                var(--c) 100% 50%, 
+                var(--c) 0    50%;
+                background-size: 24px 24px;
+                background-repeat: no-repeat;
+                animation: s2 1s infinite;
+            }
+            .custom-loader-10::before {
+            margin:8px;
+            filter:hue-rotate(45deg);
+            background-size: 16px 16px;
+            animation-timing-function: linear
+            }
+
+            @keyframes s2{ 
+            100%{transform: rotate(.5turn)}
+            }
+
+
+            .custom-loader-11 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: 
+                radial-gradient(farthest-side,#766DF4 94%,#0000) top/16px 16px no-repeat,
+                conic-gradient(#0000 30%,#766DF4);
+            -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 16px),#000 0);
+            animation:s3 1s infinite linear;
+            }
+
+            @keyframes s3{ 
+            100%{transform: rotate(1turn)}
+            }
+
+
+
+            .custom-loader-12 {
+                width: 100px;
+                height: 100px;
+                display: grid;
+                animation: s4 4s infinite;
+                }
+                .custom-loader-12::before,
+                .custom-loader-12::after {    
+                content:"";
+                grid-area: 1/1;
+                border:16px solid;
+                border-radius: 50%;
+                border-color:#766DF4 #766DF4 #0000 #0000;
+                mix-blend-mode: darken;
+                animation: s4 1s infinite linear;
+                }
+                .custom-loader-12::after {
+                border-color:#0000 #0000 #E4E4ED #E4E4ED;
+                animation-direction: reverse;
+                }
+
+                @keyframes s4{ 
+                100%{transform: rotate(1turn)}
+                    }
+
+
+                    .custom-loader-13 {
+                    width: 100px;
+                    height: 100px;
+                    display: grid;
+                    border:8px solid #0000;
+                    border-radius: 50%;
+                    border-right-color:#766DF4;
+                    animation: s5 1s infinite linear;
+                    }
+                    .custom-loader-13::before,
+                    .custom-loader-13::after {    
+                    content:"";
+                    grid-area: 1/1;
+                    margin:4px;
+                    border:inherit;
+                    border-radius: 50%;
+                    animation: s5 2s infinite;
+                    }
+                    .custom-loader-13::after {
+                    margin:16px;
+                    animation-duration: 3s;
+                    }
+
+                    @keyframes s5{ 
+                    100%{transform: rotate(1turn)}
+                    }
+
+            .custom-loader-14 {
+                width: 100px;
+                height: 100px;
+                display: grid;
+                border:8px solid #0000;
+                border-radius: 50%;
+                border-color:#E4E4ED #0000;
+                animation: s6 1s infinite linear;
+                }
+                .custom-loader-14::before,
+                .custom-loader-14::after {    
+                content:"";
+                grid-area: 1/1;
+                margin:4px;
+                border:inherit;
+                border-radius: 50%;
+                }
+                .custom-loader-14::before {
+                border-color:#766DF4 #0000;
+                animation:inherit; 
+                animation-duration: .5s;
+                animation-direction: reverse;
+                }
+                .custom-loader-14::after {
+                margin:16px;
+                }
+
+                @keyframes s6 { 
+                100%{transform: rotate(1turn)}
+                }
+
+                .custom-loader-15 {
+            width: 140px;
+            height: 140px;
+            background:
+                radial-gradient(farthest-side,#766DF4 90%,#0000) center/32px 32px,
+                radial-gradient(farthest-side,#6F6D91   90%,#0000) bottom/24px 24px;
+            background-repeat: no-repeat;
+            animation: s7 1s infinite linear;
+            position: relative;
+            }
+            .custom-loader-15::before {    
+            content:"";
+            position: absolute;
+            width:16px;
+            height:16px;
+            inset:auto 0 32px;
+            margin: auto;
+            background:#E4E4ED;
+            border-radius: 50%;
+            transform-origin: 50% calc(100% + 20px);
+            animation:inherit;
+            animation-duration: 0.5s;
+            }
+
+
+            @keyframes s7 { 
+            100%{transform: rotate(1turn)}
+            }
+
+
+            .custom-loader-16 {
+            width: 100px;
+            height: 100px;
+            --c: radial-gradient(farthest-side,#766DF4 92%,#0000);
+            background: 
+                var(--c) 50%  0, 
+                var(--c) 50%  100%, 
+                var(--c) 100% 50%, 
+                var(--c) 0    50%;
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            animation: s8 1s infinite;
+            position: relative;
+            }
+            .custom-loader-16::before {    
+            content:"";
+            position: absolute;
+            inset:0;
+            margin: 6px;
+            background:repeating-conic-gradient(#0000 0 35deg,#766DF4 0 90deg);
+            -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 6px),#000 0);
+            border-radius: 50%;
+            }
+
+            @keyframes s8 { 
+            100%{transform: rotate(.5turn)}
+            }
+
+
+
+
+            .custom-loader-17 {
+                width: 100px;
+                height: 100px;
+                display: grid;
+                color:#766DF4;
+                background: radial-gradient(farthest-side, currentColor calc(100% - 12px),#0000 calc(100% - 10px) 0);
+                -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 26px),#000 calc(100% - 24px));
+                border-radius: 50%;
+                animation: s9 2s infinite linear;
+                }
+                .custom-loader-17::before,
+                .custom-loader-17::after {    
+                content:"";
+                grid-area: 1/1;
+                background:
+                    linear-gradient(currentColor 0 0) center,
+                    linear-gradient(currentColor 0 0) center;
+                background-size: 100% 20px,20px 100%;
+                background-repeat: no-repeat;
+                }
+                .custom-loader-17::after {
+                transform: rotate(45deg);
+                }
+
+                @keyframes s9 { 
+                100%{transform: rotate(1turn)}
+                }
+
+                .custom-loader-18 {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: 16px solid #766DF4;
+                animation:
+                    s10-1 0.8s infinite linear alternate,
+                    s10-2 1.6s infinite linear;
+                }
+                @keyframes s10-1{
+                0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+                12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+                25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+                50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+                62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+                75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+                100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+                }
+                @keyframes s10-2{ 
+                0%    {transform:scaleY(1)  rotate(0deg)}
+                49.99%{transform:scaleY(1)  rotate(135deg)}
+                50%   {transform:scaleY(-1) rotate(0deg)}
+                100%  {transform:scaleY(-1) rotate(-135deg)}
+                }
+
+
+                .custom-loader-19 {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: repeating-conic-gradient(#766DF4 0 90deg,#E4E4ED 0 180deg);
+                animation: s1 1s infinite linear;
+                }
+
+                @keyframes s1 {
+                100% {transform: rotate(.5turn)}
+                }
+
+                .custom-loader-20 {
+                width: 100px;
+                height: 100px;
+                display: grid;
+                border-radius: 50%;
+                background: conic-gradient(#766DF4 25%,#E4E4ED 0 50%,#6F6D91 0 75%,#766DF4 0);
+                animation: s2 2s infinite linear;
+                }
+                .custom-loader-20::before,
+                .custom-loader-20::after {
+                content:"";
+                grid-area: 1/1;
+                margin:15%;
+                border-radius: 50%;
+                background:inherit;
+                animation:inherit;
+                }
+                .custom-loader-20::after {
+                margin:25%;
+                animation-duration: 3s;
+                }
+
+                @keyframes s2 {
+                100% {transform: rotate(1turn)}
+                }
+
+                .custom-loader-21 {
+                width: 100px;
+                height: 100px;
+                display: grid;
+                border-radius: 50%;
+                -webkit-mask:radial-gradient(farthest-side,#0000 40%,#000 41%);
+                background:
+                    linear-gradient(0deg ,#766DF480 50%,#766DF4FF 0) center/8px 100%,
+                    linear-gradient(90deg,#766DF440 50%,#766DF4BF 0) center/100% 8px;
+                background-repeat: no-repeat;
+                animation: s3 1s infinite steps(12);
+                }
+                .custom-loader-21::before,
+                .custom-loader-21::after {
+                content:"";
+                grid-area: 1/1;
+                border-radius: 50%;
+                background:inherit;
+                opacity: 0.915;
+                transform: rotate(30deg);
+                }
+                .custom-loader-21::after {
+                opacity: 0.83;
+                transform: rotate(60deg);
+                }
+
+                @keyframes s3 {
+                100% {transform: rotate(1turn)}
+                }
+
+                .custom-loader-22 {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: 16px solid #0000;
+                border-right-color: #766DF497;
+                position: relative;
+                animation: s4 1s infinite linear;
+                }
+                .custom-loader-22:before,
+                .custom-loader-22:after {
+                content: "";
+                position: absolute;
+                inset:-16px;
+                border-radius: 50%;
+                border:inherit;
+                animation:inherit;
+                animation-duration: 2s;
+                }
+                .custom-loader-22:after {
+                animation-duration: 4s;
+                }
+
+                @keyframes s4 {
+                100% {transform: rotate(1turn)}
+                }
+
+                .custom-loader-23 {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background:#766DF4;
+                -webkit-mask:radial-gradient(circle closest-side at 50% 40%,#0000 94%, #000);
+                transform-origin: 50% 40%;
+                animation: s5 1s infinite linear;
+                }
+
+                @keyframes s5 {
+                100% {transform: rotate(1turn)}
+                }
+
+                .custom-loader-24 {
+                width: 80px;
+                height: 20px;
+                color: #766DF4;
+                background:
+                    radial-gradient(farthest-side,currentColor 90%,#0000) left  /20px 20px,
+                    radial-gradient(farthest-side,currentColor 90%,#0000) center/20px 20px,
+                    radial-gradient(farthest-side,currentColor 90%,#0000) right /20px 20px,
+                    linear-gradient(currentColor 0 0) center/100% 8px; 
+                background-repeat: no-repeat;
+                position: relative;
+                animation: s6 2s infinite linear;
+                }
+                .custom-loader-24:before,
+                .custom-loader-24:after {
+                content: "";
+                position: absolute;
+                inset:0;
+                background:inherit;
+                animation:inherit;
+                --s:calc(50% - 10px);
+                animation-direction: reverse;
+                }
+                .custom-loader-24:after {
+                --s:calc(10px - 50%);
+                }
+
+                @keyframes s6 {
+                0%   {transform: translate(var(--s,0)) rotate(0)}
+                100% {transform: translate(var(--s,0)) rotate(1turn)}
+                }
+
+
+                .custom-loader-25 {
+                --d:44px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                color: #766DF4;
+                box-shadow: 
+                    calc(1*var(--d))      calc(0*var(--d))     0 0,
+                    calc(0.707*var(--d))  calc(0.707*var(--d)) 0 2px,
+                    calc(0*var(--d))      calc(1*var(--d))     0 4px,
+                    calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 6px,
+                    calc(-1*var(--d))     calc(0*var(--d))     0 8px,
+                    calc(-0.707*var(--d)) calc(-0.707*var(--d))0 10px,
+                    calc(0*var(--d))      calc(-1*var(--d))    0 12px;
+                animation: s7 1s infinite steps(8);
+                }
+
+                @keyframes s7 {
+                100% {transform: rotate(1turn)}
+                }
+
+                .custom-loader-26 {
+                width: 100px;
+                height: 100px;
+                display: grid;
+                color: #766DF4;
+                background: 
+                    linear-gradient(currentColor 0 0) center/100% 6px,
+                    linear-gradient(currentColor 0 0) center/6px 100%;
+                background-repeat: no-repeat;
+                animation: s8 2s infinite;
+                }
+
+                .custom-loader-26::before,
+                .custom-loader-26::after {
+                content: "";
+                grid-area: 1/1;
+                background: repeating-conic-gradient(#0000 0 35deg,currentColor 0 90deg);
+                -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 6px),#000 0);
+                border-radius: 50%;
+                }
+                .custom-loader-26::after {
+                margin:20%;
+                }
+
+                @keyframes s8 {
+                100% {transform: rotate(1turn)}
+                }
+
+                .custom-loader-27 {
+                --s:16px;
+                width: 100px;
+                height: 100px;
+                background: #766DF4;
+                border-radius: 50%;
+                animation: s9 2s infinite linear;
+                clip-path: polygon(0 0,calc(50% - var(--s)) 0,50% var(--s),calc(50% + var(--s)) 0,100% 0,100% calc(50% - var(--s)),calc(100% - var(--s)) 50%,100% calc(50% + var(--s)),100% 100%,calc(50% + var(--s)) 100%, 50% calc(100% - var(--s)),calc(50% - var(--s)) 100%,0 100%,0 calc(50% + var(--s)), var(--s) 50%, 0 calc(50% - var(--s)));
+                }
+
+                @keyframes s9 {
+                100% {transform: rotate(1turn)}
+                }
+
+                .custom-loader-28 {
+                --R:60px;
+                --g1:#766DF4 96%, #0000;
+                --g2:#E4E4ED 96%, #0000;
+                width: calc(2*var(--R));
+                height:calc(2*var(--R));
+                border-radius:50%;
+                display: grid;
+                -webkit-mask:linear-gradient(#000 0 0);
+                animation: s10 2s infinite linear;
+                }
+
+                .custom-loader-28::before,
+                .custom-loader-28::after{
+                content:"";
+                grid-area: 1/1;
+                width:50%;
+                background:
+                    radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+                    radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+                    radial-gradient(farthest-side,var(--g2)) calc(var(--R) + 0.5*var(--R)   - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R)),
+                    radial-gradient(farthest-side,var(--g1)) 0 calc(-1*var(--R)),
+                    radial-gradient(farthest-side,var(--g2)) calc(var(--R) - 0.5*var(--R)   - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R)),
+                    radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+                    radial-gradient(farthest-side,var(--g2)) calc(-1*var(--R))  0,
+                    radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) + 0.5*var(--R)   - var(--R));
+                background-size:calc(2*var(--R)) calc(2*var(--R));
+                background-repeat:no-repeat;
+                }
+
+                .custom-loader-28::after {
+                transform:rotate(180deg);
+                transform-origin:right;
+                }
+
+                @keyframes s10 {
+                100% {transform: rotate(-1turn)}
+                }
+
+                .custom-loader-29 {
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            padding:1px;
+            background:conic-gradient(#0000 10%,#766DF4) content-box;
+            -webkit-mask:
+                repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+                radial-gradient(farthest-side,#0000 calc(100% - 18px),#000 calc(100% - 16px));
+            -webkit-mask-composite: destination-in;
+            mask-composite: intersect;
+            animation:s4 1s infinite steps(10);
+            }
+            @keyframes s4 {to{transform: rotate(1turn)}}
+
+
+            .custom-loader-30 {
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            background:#766DF4;
+            -webkit-mask:
+                repeating-conic-gradient(#0000 0deg,#000 1deg 70deg,#0000 71deg 90deg),
+                radial-gradient(farthest-side,#0000 calc(100% - 18px),#000 calc(100% - 16px));
+            -webkit-mask-composite: destination-in;
+            mask-composite: intersect;
+            animation:s5 1s infinite ;
+            }
+            @keyframes s5 {to{transform: rotate(.5turn)}}
+
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="custom-loader-1"></div>
+        <div class="custom-loader-2"></div>
+        <div class="custom-loader-3"></div>
+        <div class="custom-loader-4"></div>
+        <div class="custom-loader-5"></div>
+        <div class="custom-loader-6"></div>
+        <div class="custom-loader-7"></div>
+        <div class="custom-loader-8"></div>
+        <div class="custom-loader-9"></div>
+        <div class="custom-loader-10"></div>
+        <div class="custom-loader-11"></div>
+        <div class="custom-loader-12"></div>
+        <div class="custom-loader-13"></div>
+        <div class="custom-loader-14"></div>
+        <div class="custom-loader-15"></div>
+        <div class="custom-loader-16"></div>
+        <div class="custom-loader-17"></div>
+        <div class="custom-loader-18"></div>
+        <div class="custom-loader-19"></div>
+        <div class="custom-loader-20"></div>
+        <div class="custom-loader-21"></div>
+        <div class="custom-loader-22"></div>
+        <div class="custom-loader-23"></div>
+        <div class="custom-loader-24"></div>
+        <div class="custom-loader-25"></div>
+        <div class="custom-loader-26"></div>
+        <div class="custom-loader-27"></div>
+        <div class="custom-loader-28"></div>
+        <div class="custom-loader-29"></div>
+        <div class="custom-loader-30"></div>
+    </div>
+</body>
+</html>

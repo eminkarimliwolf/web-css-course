@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox-menu-bar</title>
+    <style>
+        .menu-bar {
+  background-color: #1988f7;
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.item {
+  color: white;
+  background-color: transparent;
+  font-size: 18px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 14px 20px;
+}
+
+.item.title {
+  font-weight: 600;
+}
+
+.item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+    </style>
+</head>
+<body>
+    <nav class="menu-bar">
+        <div class="group">
+          <a class="item title">Site Title</a>
+        </div>
+        <div class="group">
+          <a class="item">Link 1</a>
+          <a class="item">Link 2</a>
+        </div>
+      </nav>
+</body>
+</html>

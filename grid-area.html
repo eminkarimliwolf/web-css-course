@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header {
+  grid-area: hd;
+}
+.footer {
+  grid-area: ft;
+}
+.content {
+  grid-area: main;
+}
+.sidebar {
+  grid-area: sd;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas:
+    "hd hd hd hd   hd   hd   hd   hd   hd"
+    "sd sd sd main main main main main main"
+    "ft ft ft ft   ft   ft   ft   ft   ft";
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header" style="background-color: aqua;">Header</div>
+        <div class="sidebar" style="background-color: black;">Sidebar</div>
+        <div class="content" style="background-color: blue;">Content</div>
+        <div class="footer" style="background-color: blueviolet;">Footer</div>
+      </div>
+</body>
+</html>

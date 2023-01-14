@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+  display: flex;
+  height: 240px;
+  width: 240px;
+  flex-wrap: wrap;
+  background-color: #8c8c8c;
+  writing-mode: horizontal-tb; /* Can be changed in the live sample */
+  direction: ltr; /* Can be changed in the live sample */
+  place-content: flex-end center; /* Can be changed in the live sample */
+}
+
+div > div {
+  border: 2px solid #8c8c8c;
+  width: 50px;
+  background-color: #a0c8ff;
+}
+
+.small {
+  font-size: 12px;
+  height: 40px;
+}
+
+.large {
+  font-size: 14px;
+  height: 50px;
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="small">Lorem</div>
+        <div class="small">Lorem<br />ipsum</div>
+        <div class="large">Lorem</div>
+        <div class="large">Lorem<br />ipsum</div>
+        <div class="large"></div>
+        <div class="large"></div>
+      </div>
+</body>
+</html>

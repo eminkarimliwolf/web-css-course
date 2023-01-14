@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradient</title>
+    <style>
+        .container{
+            position: relative;
+            display: grid;
+            column-count: 4;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            background-color:darkgrey;
+        }
+        .items{
+            width: 25%;
+            height: 200px;
+            justify-content: space-evenly;
+        }
+        .item_1{
+            background: #25CC0F;
+background: linear-gradient(to bottom right, #25CC0F 0%, #9E3212 100%);
+
+        }
+        .item_2{
+            background: #B8E1FC;
+background: radial-gradient(circle farthest-corner at center center, #B8E1FC 0%, #231421 100%);
+
+        }
+        .item_3{
+            background: #F0B7A1;
+background: linear-gradient(to right, #F0B7A1 0%, #8C3310 50%, #752201 51%, #BF6E4E 100%);
+
+        }
+        .item_4{
+            background: #F8FFE8;
+background: linear-gradient(to right, #F8FFE8 0%, #E3F5AB 33%, #B7DF2D 100%);
+
+        }
+        .item_5{
+            background: #CFE7fA;
+background: linear-gradient(to right, #CFE7fA 0%, #6393C1 100%);
+
+        }
+        .item_6{
+            background: #FCEABB;
+background: linear-gradient(to right, #FCEABB 0%, #FCCD4D 50%, #F8B500 51%, #FBDF93 100%);
+
+        }
+        .item_7{
+            background: #FFB76B;
+background: linear-gradient(to right, #FFB76B 0%, #FFA73D 30%, #FF7C00 60%, #FF7F04 100%);
+
+        }
+        .item_8{
+            background: #959595;
+background: linear-gradient(to right, #959595 0%, #0D0D0D 46%, #010101 50%, #0A0A0A 53%, #4E4E4E 76%, #383838 87%, #1B1B1B 100%);
+
+        }
+        .item_9{
+            background: #F6F8F9;
+background: radial-gradient(circle farthest-corner at center center, #F6F8F9 0%, #E5EBEE 30%, #D7DEE3 60%, #F5F7F9 100%);
+
+        }
+        .item_10{
+            background: #008080;
+background: linear-gradient(to left, #008080 0%, #FFFFFF 25%, #05C1FF 50%, #FFFFFF 75%, #005757 100%);
+
+        }
+        .item_11{
+            background: #00FF00;
+background: linear-gradient(to left, #00FF00 0%, #FF0000 100%);
+
+        }
+        .item_12{
+            background: #000000;
+background: linear-gradient(to left, #000000 0%, #FFFFFF 50%, #000000 100%);
+
+        }
+        .item_13{
+            background: #FF0000;
+background: linear-gradient(to right, #FF0000 0%, #FFFF00 25%, #05C1FF 50%, #FFFF00 75%, #FF0000 100%);
+
+        }
+        .item_14{
+            background: #FFFF00;
+background: linear-gradient(to left, #FFFF00 0%, #05C1FF 50%, #FFFF00 100%);
+
+        }
+        .item_15{
+            background: #F85032;
+background: linear-gradient(to right, #F85032 0%, #F16F5C 50%, #F6290C 51%, #F02F17 71%, #E73827 100%);
+
+        }
+        .item_16{
+            background: #CB60B3;
+background: linear-gradient(to right, #CB60B3 0%, #C146A1 50%, #A80077 51%, #DB36A4 100%);
+
+        }
+        .item_17{
+            background: #A7CFDF;
+background: linear-gradient(to right, #A7CFDF 0%, #23538A 100%);
+
+        }
+        .item_18{
+            background: #E4EFC0;
+background: linear-gradient(to right, #E4EFC0 0%, #ABBD73 100%);
+
+        }
+        .item_19{
+            background: #FF0000;
+background: linear-gradient(to left, #FF0000 0%, #ffff00 50%, #FF0000 100%);
+
+        }
+        .item_20{
+            background: #FF0000;
+background: linear-gradient(to left, #FF0000 0%, #000000 100%);
+
+        }
+        .item_21{
+            background: #B7DEED;
+background: linear-gradient(to right, #B7DEED 0%, #71CEEF 25%, #21B4E2 75%, #B7DEED 100%);
+
+        }
+        .item_22{
+            background: #FF0000;
+background: radial-gradient(circle farthest-corner at center center, #FF0000 0%, #FFFF00 25%, #05C1FF 50%, #FFFF00 75%, #FF0000 100%);
+
+        }
+        .item_23{
+            background: #FFFFFF;
+background: linear-gradient(to left, #FFFFFF 0%, #FF0000 100%);
+
+        }
+        .item_24{
+            background: #00FF00;
+background: linear-gradient(to left, #00FF00 0%, #00FFFF 100%);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items item_1"></div>
+        <div class="items item_2"></div>
+        <div class="items item_3"></div>
+        <div class="items item_4"></div>
+        <div class="items item_5"></div>
+        <div class="items item_6"></div>
+        <div class="items item_7"></div>
+        <div class="items item_8"></div>
+        <div class="items item_9"></div>
+        <div class="items item_10"></div>
+        <div class="items item_11"></div>
+        <div class="items item_12"></div>
+        <div class="items item_13"></div>
+        <div class="items item_14"></div>
+        <div class="items item_15"></div>
+        <div class="items item_16"></div>
+        <div class="items item_17"></div>
+        <div class="items item_18"></div>
+        <div class="items item_19"></div>
+        <div class="items item_20"></div>
+        <div class="items item_21"></div>
+        <div class="items item_22"></div>
+        <div class="items item_23"></div>
+        <div class="items item_24"></div>
+    </div>
+</body>
+</html>

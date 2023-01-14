@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bg-gradient</title>
+    <style>
+      .mix {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 300px;
+        width: 100%;
+        background: pink;
+        align-items: center;
+        justify-content: center;
+      }
+      .linear {
+        margin-left: 5px;
+        width: 97%;
+        height: 95%;
+        background-image: linear-gradient(45deg, rgba(25, 136, 247, 1) 0%, rgba(247, 25, 136, 1) 100%);
+      }
+      .radial {
+        width: 99%;
+        height: 95%;
+        background-image: radial-gradient(circle, rgba(25, 136, 247, 1) 0%, rgba(247, 25, 136, 1) 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mix">
+      <div class="linear">
+        <p>linear</p>
+      </div>
+      <div class="radial">
+        <p>radial</p>
+      </div>
+    </div>
+  </body>
+</html>

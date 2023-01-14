@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox-items</title>
+    <style>
+        .flexbox {
+  display: flex;
+  /* row (sıralama satırda) */
+  flex-direction: row; 
+  /* row-reverse satırda tersten sırala */
+  /* flex-direction: row-reverse; */
+  /* wrap sırala containere sıgdır */
+  /* flex-wrap: wrap; */
+  /* wrap-reverse tersten sıralal contente */
+  /* flex-wrap: wrap-reverse; */
+  /* nowrap satıra sıgdır inline gibi davran */
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  margin: 0px -10px;
+}
+
+.item {
+  box-sizing: border-box;
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 0px 10px;
+}
+
+.content {
+  color: #242424;
+  background-color: #1bbefe;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="flexbox">
+        <div class="item">
+          <div class="content">
+            <p>11111</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="content">
+            <p>22222</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="content">
+            <p>33333</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="content">
+            <p>44444</p>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

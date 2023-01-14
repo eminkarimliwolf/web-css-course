@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #example {
+        width: 70px;
+        height: 300px;
+        padding: 0;
+        border: 1px solid #c3c3c3;
+        display: -webkit-flex;
+        /* Safari */
+        -webkit-flex-flow: row wrap;
+        /* Safari 6.1+ */
+        -webkit-align-content: center;
+        /* Safari 7.0+ */
+        display: flex;
+        flex-flow: row wrap;
+        align-content: center;
+      }
+      #example li {
+        width: 70px;
+        height: 70px;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Align-content: center; example</h2>
+    <ul id="example">
+      <li style="background-color:#8ebf42;"></li>
+      <li style="background-color:#1c87c9;"></li>
+      <li style="background-color:#666;"></li>
+    </ul>
+  </body>
+</html>
